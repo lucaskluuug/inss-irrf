@@ -1,17 +1,20 @@
-// Algoritmo "G001_G00100206"
+//This algorithm reads the gross salary and mention the inss and irrf discounts
+
+
 // Autor : Lucas Arndt
 // Data : 17/09/2021
 
         #include <stdio.h>
         #include <math.h>
+        #include <locale.h>
         void main()
         {
-        int num_func;
+
+        setlocale(LC_ALL, "Portuguese");
+
         float sal_bruto, sal_liq, desc_irrf, desc_inss;
                 
-        printf("Escreva o número do funcionário: \n");
-        scanf("%d", &num_func);
-        printf("Escreva o salário bruto: \n");
+        printf("Escreva o salario bruto: \n");
         scanf("%f", &sal_bruto);
 
                 //descontando inss
@@ -53,10 +56,9 @@
                 desc_irrf = sal_liq * 27.5/100 - 869.36;
                 sal_liq = sal_liq - desc_irrf;
         } 
-                
-                printf("Número do funcionário: %d\n", num_func);
-                printf("Salário bruto: R$ %.2f\n", sal_bruto);
-                printf("Desconto INSS: R$ %.3f\n", desc_inss);
+
+                printf("Salario bruto: R$ %.2f\n", sal_bruto);
+                printf("Desconto INSS: R$ %.2f\n", desc_inss);
                 printf("Desconto IRRF: R$ %.2f\n", desc_irrf);
-                printf("Salário liquído: R$ %.2f\n", sal_liq);
+                printf("Salario liquido: R$ %.2f\n", sal_liq);
         }
